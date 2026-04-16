@@ -24,9 +24,10 @@ jobs:
       - name: Build EXE
         run: |
           pyinstaller --onefile --windowed --name "SyncSlide_for_OBS" syncslide_obs_app.py
-
+      - name: List dist contents
+        run: dir dist
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: SyncSlide_EXE
-          path: dist/*
+          path: dist/**
